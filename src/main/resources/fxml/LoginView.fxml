@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.atualle.controller.LoginController" stylesheets="@../style.css">
+    <VBox styleClass="login-container" alignment="CENTER" spacing="10">
+        <Label text="Login" styleClass="login-title"/>
+        <TextField fx:id="usernameField" promptText="Usuário" styleClass="login-field"/>
+        <PasswordField fx:id="passwordField" promptText="Senha" styleClass="login-field"/>
+        <Button fx:id="loginButton" text="Entrar" onAction="#handleLogin" styleClass="login-button"/>
+        <Label fx:id="messageLabel" styleClass="login-message"/>
+    </VBox>
+</StackPane>

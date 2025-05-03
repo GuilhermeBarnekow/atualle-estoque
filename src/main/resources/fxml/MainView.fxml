@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" 
+           fx:controller="com.atualle.controller.MainController"
+           stylesheets="@../style.css">
+    <left>
+        <VBox spacing="10" styleClass="side-menu" fx:id="sideMenu">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button fx:id="btnProducts" onAction="#showProductsView" maxWidth="Infinity" styleClass="side-menu-button">
+                <text>Produtos</text>
+            </Button>
+            <Button fx:id="btnCategories" onAction="#showCategoriesView" maxWidth="Infinity" styleClass="side-menu-button">
+                <text>Categorias</text>
+            </Button>
+            <Button fx:id="btnStockMovements" onAction="#showStockMovementsView" maxWidth="Infinity" styleClass="side-menu-button">
+                <text>Movimentações</text>
+            </Button>
+            <Button fx:id="btnReports" onAction="#showReportsView" maxWidth="Infinity" styleClass="side-menu-button">
+                <text>Relatórios</text>
+            </Button>
+            <Button fx:id="btnSettings" onAction="#showSettingsView" maxWidth="Infinity" styleClass="side-menu-button">
+                <text>Configurações</text>
+            </Button>
+        </VBox>
+    </left>
+    <center>
+        <StackPane fx:id="contentPane">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+        </StackPane>
+    </center>
+    <bottom>
+        <Label fx:id="statusLabel" text="Seção atual: Produtos">
+            <padding>
+                <Insets top="5" right="5" bottom="5" left="5"/>
+            </padding>
+        </Label>
+    </bottom>
+</BorderPane>

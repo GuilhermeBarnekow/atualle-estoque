@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.atualle.controller.StockMovementController" spacing="15" styleClass="content-pane">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+
+    <!-- Search Bar -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Buscar:" styleClass="form-label"/>
+        <TextField fx:id="searchField" promptText="Buscar por tipo, usuário, data..." HBox.hgrow="ALWAYS" styleClass="search-field"/>
+        <Button text="Limpar" onAction="#handleClearSearch" styleClass="secondary-button"/>
+    </HBox>
+
+    <!-- Stock Movements Table -->
+    <TableView fx:id="stockMovementTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="75" resizable="false"/>
+            <TableColumn fx:id="typeColumn" text="Tipo" prefWidth="150"/>
+            <TableColumn fx:id="dateColumn" text="Data" prefWidth="150"/>
+            <TableColumn fx:id="userColumn" text="Usuário" prefWidth="150"/>
+            <TableColumn fx:id="quantityColumn" text="Quantidade" prefWidth="100"/>
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+
+    <!-- Movement Form -->
+    <GridPane hgap="15" vgap="10" styleClass="form-grid">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="120" maxWidth="120"/>
+            <ColumnConstraints minWidth="300" hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <Label text="ID:" styleClass="form-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="idField" styleClass="form-field" GridPane.rowIndex="0" GridPane.columnIndex="1" editable="false"/>
+
+        <Label text="Tipo:" styleClass="form-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="typeComboBox" styleClass="form-field" GridPane.rowIndex="1" GridPane.columnIndex="1">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Entrada"/>
+                    <String fx:value="Saída"/>
+                    <String fx:value="Ajuste"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <Label text="Data:" styleClass="form-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="datePicker" styleClass="form-field" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Usuário:" styleClass="form-label" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="userField" styleClass="form-field" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Quantidade:" styleClass="form-label" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="quantityField" styleClass="form-field" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <!-- Action Buttons -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Adicionar" onAction="#handleAddStockMovement" styleClass="primary-button">
+            <tooltip>
+                <Tooltip text="Adicionar nova movimentação" />
+            </tooltip>
+        </Button>
+        <Button text="Atualizar" onAction="#handleUpdateStockMovement" styleClass="primary-button">
+            <tooltip>
+                <Tooltip text="Atualizar movimentação selecionada" />
+            </tooltip>
+        </Button>
+        <Button text="Deletar" onAction="#handleDeleteStockMovement" styleClass="danger-button">
+            <tooltip>
+                <Tooltip text="Deletar movimentação selecionada" />
+            </tooltip>
+        </Button>
+    </HBox>
+</VBox>

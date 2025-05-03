@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.atualle.controller.ReportController" spacing="20">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+    <Label text="Relatórios" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <HBox spacing="20" alignment="CENTER">
+
+        <Button fx:id="btnGenerateStockReport" text="Gerar Relatório de Estoque Atual" onAction="#handleGenerateStockReport">
+            <tooltip>
+                <Tooltip text="Gera relatório PDF do estoque atual" />
+            </tooltip>
+        </Button>
+        <Button fx:id="btnGenerateMovementReport" text="Gerar Relatório de Movimentações" onAction="#handleGenerateMovementReport">
+            <tooltip>
+                <Tooltip text="Gera relatório PDF das movimentações de estoque" />
+            </tooltip>
+        </Button>
+    </HBox>
+</VBox>
