@@ -11,7 +11,7 @@
 ## Reportando Vulnerabilidades
 
 1. **Não** abra uma issue pública para vulnerabilidades de segurança
-2. Envie um email para security@atualle.com.br com:
+2. Envie um email para barnekowgui@gmail.com com:
    - Descrição do problema
    - Passos para reproduzir
    - Possível impacto
@@ -83,11 +83,6 @@ Excluído:
 - Documentação
 - Issues públicas
 
-## Contato
-
-- Email: security@atualle.com.br
-- PGP Key: [security.asc](https://atualle.com.br/security.asc)
-- Telegram: @atuallesec
 
 ## Links Úteis
 
